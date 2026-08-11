@@ -1,0 +1,551 @@
+.derma-roi-calculator-wrapper {
+    --derma-roi-font-family: var(--wp--preset--font-family--body, var(--global-font-family, inherit));
+    --derma-roi-surface: var(--derma-roi-global-surface, #061b2b);
+    --derma-roi-panel: var(--derma-roi-global-panel, #082338);
+    --derma-roi-panel-soft: var(--derma-roi-global-panel-soft, #0b2f46);
+    --derma-roi-border: var(--derma-roi-global-border, rgba(47, 232, 132, 0.24));
+    --derma-roi-border-muted: var(--derma-roi-global-border-muted, rgba(151, 179, 202, 0.16));
+    --derma-roi-text: var(--derma-roi-global-text, var(--wp--preset--color--base, #ffffff));
+    --derma-roi-muted: var(--derma-roi-global-muted, #9eb6c9);
+    --derma-roi-accent: var(--derma-roi-global-accent, var(--wp--preset--color--primary, #19d9c0));
+    --derma-roi-positive: var(--derma-roi-global-positive, #31f279);
+    --derma-roi-danger: var(--derma-roi-global-danger, #ff3956);
+    --derma-roi-cta: var(--derma-roi-global-cta, #1fa9d2);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: none;
+    margin: 16px 0;
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 16px;
+    background: var(--derma-roi-surface);
+    color: var(--derma-roi-text);
+    font-family: var(--derma-roi-font-family);
+}
+
+.derma-roi-calculator-wrapper *,
+.derma-roi-calculator-wrapper *::before,
+.derma-roi-calculator-wrapper *::after {
+    box-sizing: border-box;
+}
+
+.derma-roi-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--derma-roi-border-muted);
+}
+
+.derma-roi-heading {
+    min-width: 0;
+}
+
+.derma-roi-kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 20px;
+    margin-bottom: 8px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(0, 178, 214, 0.12);
+    color: var(--derma-roi-accent);
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.derma-roi-header h3 {
+    margin: 0 0 6px;
+    color: var(--derma-roi-text);
+    font-size: clamp(24px, 2.3vw, 28px);
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.derma-roi-header p,
+.derma-roi-subline {
+    margin: 0;
+    color: var(--derma-roi-muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.derma-roi-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 196px;
+    padding: 12px 14px;
+    border: 1px solid var(--derma-roi-border-muted);
+    border-radius: 8px;
+    background: rgba(3, 17, 32, 0.48);
+}
+
+.derma-roi-score-icon,
+.derma-roi-risk-icon,
+.derma-roi-panel-title span {
+    position: relative;
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--derma-roi-accent);
+    border-radius: 4px;
+}
+
+.derma-roi-score-icon::before,
+.derma-roi-score-icon::after {
+    position: absolute;
+    bottom: 3px;
+    width: 3px;
+    content: "";
+    background: var(--derma-roi-accent);
+}
+
+.derma-roi-score-icon::before {
+    left: 4px;
+    height: 5px;
+}
+
+.derma-roi-score-icon::after {
+    right: 4px;
+    height: 9px;
+}
+
+.derma-roi-score small {
+    display: block;
+    color: var(--derma-roi-muted);
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.derma-roi-score strong {
+    display: block;
+    margin-top: 3px;
+    color: var(--derma-roi-positive);
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+.derma-roi-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 18px;
+    margin-top: 14px;
+}
+
+.derma-roi-side {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+}
+
+.derma-roi-panel {
+    border: 1px solid var(--derma-roi-border);
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(8, 35, 56, 0.98), rgba(8, 31, 50, 0.98));
+}
+
+.derma-roi-inputs {
+    display: grid;
+    gap: 28px;
+    padding: 20px 18px 18px;
+}
+
+.derma-roi-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: var(--derma-roi-muted);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.derma-roi-panel-title span {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+.derma-roi-panel-title span::before {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 4px;
+    height: 7px;
+    border-right: 2px solid var(--derma-roi-accent);
+    border-bottom: 2px solid var(--derma-roi-accent);
+    content: "";
+    transform: rotate(38deg);
+}
+
+.derma-roi-control {
+    display: grid;
+    gap: 14px;
+}
+
+.derma-roi-label,
+.derma-roi-labels {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.derma-roi-label span {
+    color: var(--derma-roi-text);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.derma-roi-value,
+.derma-roi-highlight {
+    color: var(--derma-roi-accent);
+}
+
+.derma-roi-value {
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.derma-roi-input {
+    width: 100%;
+    height: 18px;
+    margin: 0;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.derma-roi-input::-webkit-slider-runnable-track {
+    height: 3px;
+    border-radius: 999px;
+    background: #385069;
+}
+
+.derma-roi-input::-moz-range-track {
+    height: 3px;
+    border-radius: 999px;
+    background: #385069;
+}
+
+.derma-roi-input::-webkit-slider-thumb {
+    width: 17px;
+    height: 17px;
+    margin-top: -7px;
+    appearance: none;
+    border: 0;
+    border-radius: 50%;
+    background: var(--derma-roi-accent);
+}
+
+.derma-roi-input::-moz-range-thumb {
+    width: 17px;
+    height: 17px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--derma-roi-accent);
+}
+
+.derma-roi-labels small {
+    color: #607c9b;
+    font-size: 11px;
+    line-height: 1.25;
+}
+
+.derma-roi-selects {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.derma-roi-select-group {
+    display: grid;
+    gap: 8px;
+}
+
+.derma-roi-select-group label {
+    color: #87adc9;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.derma-roi-select {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 34px 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 4px;
+    background: #ffffff;
+    color: #3c4652;
+    font: inherit;
+}
+
+.derma-roi-estimate {
+    padding: 18px;
+}
+
+.derma-roi-estimate h4 {
+    margin: 0 0 2px;
+    color: var(--derma-roi-positive);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+.derma-roi-profit-label {
+    margin-top: 18px;
+    color: var(--derma-roi-muted);
+    font-size: 13px;
+}
+
+.derma-roi-profit {
+    margin-top: 2px;
+    color: var(--derma-roi-positive);
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 850;
+    line-height: 1;
+    overflow-wrap: anywhere;
+}
+
+.derma-roi-metrics {
+    display: grid;
+    gap: 0;
+    margin: 30px 0 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--derma-roi-border-muted);
+}
+
+.derma-roi-metrics div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+    min-height: 31px;
+}
+
+.derma-roi-metrics dt,
+.derma-roi-metrics dd {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.derma-roi-metrics dt {
+    color: var(--derma-roi-muted);
+}
+
+.derma-roi-metrics dd {
+    color: var(--derma-roi-text);
+    font-weight: 800;
+    text-align: right;
+}
+
+.derma-roi-metrics .derma-roi-negative {
+    color: var(--derma-roi-danger);
+}
+
+.derma-roi-break-row {
+    margin: 10px 0;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: rgba(22, 70, 28, 0.45);
+}
+
+.derma-roi-break-row dd {
+    color: var(--derma-roi-positive);
+}
+
+.derma-roi-metrics div:last-child dd {
+    color: var(--derma-roi-accent);
+    font-weight: 650;
+}
+
+.derma-roi-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    background: var(--derma-roi-cta);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 750;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+}
+
+.derma-roi-cta:hover,
+.derma-roi-cta:focus {
+    color: #ffffff;
+    filter: brightness(1.08);
+    text-decoration: none;
+}
+
+.derma-roi-cta span {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.derma-roi-risk {
+    display: flex;
+    gap: 13px;
+    width: 100%;
+    min-height: 140px;
+    margin-top: 28px;
+    padding: 18px;
+    border: 1px solid var(--derma-roi-border);
+    border-radius: 12px;
+    background: rgba(8, 35, 56, 0.72);
+}
+
+.derma-roi-risk-icon {
+    width: 18px;
+    height: 20px;
+    border-color: var(--derma-roi-positive);
+    border-radius: 12px 12px 14px 14px;
+}
+
+.derma-roi-risk-icon::before {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid var(--derma-roi-positive);
+    border-bottom: 2px solid var(--derma-roi-positive);
+    content: "";
+    transform: rotate(38deg);
+}
+
+.derma-roi-risk strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--derma-roi-text);
+    font-size: 14px;
+}
+
+.derma-roi-risk p {
+    max-width: 470px;
+    margin: 0;
+    color: var(--derma-roi-muted);
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.derma-roi-error {
+    color: var(--derma-roi-danger, #b42318);
+}
+
+.derma-roi-price {
+    --derma-roi-price-accent: var(--derma-roi-global-accent, var(--wp--preset--color--primary, #19d9c0));
+    --derma-roi-price-text: var(--derma-roi-global-text, #ffffff);
+    --derma-roi-price-muted: var(--derma-roi-global-muted, #9eb6c9);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid rgba(25, 217, 192, 0.36);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(6, 27, 43, 0.96), rgba(8, 47, 70, 0.94));
+    color: var(--derma-roi-price-text);
+    font-family: var(--wp--preset--font-family--body, var(--global-font-family, inherit));
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.derma-roi-price::before {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--derma-roi-price-accent);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 3px rgba(25, 217, 192, 0.16);
+    content: "";
+}
+
+.derma-roi-price-rental {
+    --derma-roi-price-accent: var(--derma-roi-global-positive, #31f279);
+    border-color: rgba(49, 242, 121, 0.34);
+}
+
+@media (max-width: 920px) {
+    .derma-roi-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .derma-roi-risk {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .derma-roi-calculator-wrapper {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .derma-roi-header,
+    .derma-roi-selects,
+    .derma-roi-metrics div {
+        grid-template-columns: 1fr;
+    }
+
+    .derma-roi-header {
+        display: grid;
+    }
+
+    .derma-roi-score {
+        width: 100%;
+    }
+
+    .derma-roi-label {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .derma-roi-labels {
+        align-items: flex-start;
+    }
+
+    .derma-roi-labels small {
+        max-width: 30%;
+    }
+
+    .derma-roi-metrics div {
+        justify-items: start;
+        gap: 6px;
+        padding: 8px 0;
+    }
+
+    .derma-roi-metrics dd {
+        text-align: left;
+    }
+
+    .derma-roi-break-row {
+        padding: 10px;
+    }
+
+    .derma-roi-price {
+        justify-content: center;
+        width: 100%;
+    }
+}

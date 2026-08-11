@@ -1,0 +1,46 @@
+.derma-roi-settings .form-table th {
+    width: 220px;
+}
+
+.derma-roi-grid-2,
+.derma-roi-lease-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.derma-roi-lease-grid {
+    grid-template-columns: 1fr;
+}
+
+.derma-roi-settings label {
+    display: grid;
+    gap: 4px;
+}
+
+.derma-roi-shortcode-box {
+    display: grid;
+    gap: 10px;
+}
+
+.derma-roi-shortcode-box code {
+    display: block;
+    padding: 10px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+    background: #fff;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.derma-roi-instructions {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 782px) {
+    .derma-roi-grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
