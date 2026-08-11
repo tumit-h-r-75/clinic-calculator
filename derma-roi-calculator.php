@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: DermaScope ROI Calculator
-Plugin URI: https://derma-x.dk
+Plugin URI: https://github.com/tumit-h-r-75/clinic-calculator
 Description: Interactive ROI calculator for dermatology clinics with custom post type and shortcode.
 Version: 1.0.0
-Author: Derma-X
-Author URI: https://derma-x.dk
+Author: Tumit
+Author URI: https://my-protfolio-tumit.web.app
 License: GPL v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://github.com/tumit-h-r-75/clinic-calculator
 Text Domain: derma-roi-calculator
 Domain Path: /languages
 Requires at least: 5.0
