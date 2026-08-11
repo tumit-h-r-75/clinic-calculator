@@ -4,7 +4,7 @@ Plugin Name: DermaScope ROI Calculator
 Plugin URI: https://github.com/tumit-h-r-75/clinic-calculator
 Description: Interactive ROI calculator for dermatology clinics with custom post type and shortcode.
 Version: 1.0.0
-Author: Tumit
+Author: Nizam Uddin
 Author URI: https://my-protfolio-tumit.web.app
 License: GPL v2 or later
 License URI: https://github.com/tumit-h-r-75/clinic-calculator
