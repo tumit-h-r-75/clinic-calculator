@@ -27,6 +27,7 @@ class Derma_ROI_Shortcode {
         wp_enqueue_style('derma-roi-calculator');
 
         $default_days = min(max(20, $settings['min_days']), $settings['max_days']);
+        $financing_url = self::get_financing_url($post_id);
 
         ob_start();
         ?>
@@ -102,7 +103,7 @@ class Derma_ROI_Shortcode {
                             </div>
                         </dl>
                     </div>
-                    <a class="derma-roi-cta" href="#"><?php esc_html_e('Søg uforpligtende Finansierings-Godkendelse', 'derma-roi-calculator'); ?><span aria-hidden="true"></span></a>
+                    <a class="derma-roi-cta" href="<?php echo esc_url($financing_url); ?>"><?php esc_html_e('Søg uforpligtende Finansierings-Godkendelse', 'derma-roi-calculator'); ?><span aria-hidden="true"></span></a>
                 </div>
             </div>
 
@@ -212,6 +213,12 @@ class Derma_ROI_Shortcode {
 
     private static function format_lease_label($name, $cost) {
         return $name . ' (' . number_format_i18n($cost) . ' kr./md)';
+    }
+
+    private static function get_financing_url($post_id) {
+        $url = add_query_arg('page_id', 3742, home_url('/'));
+
+        return apply_filters('derma_roi_financing_url', $url, $post_id);
     }
 
     private static function get_day_options($min_days, $max_days, $default_days) {

@@ -370,13 +370,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    min-height: 36px;
-    padding: 8px 16px;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 18px;
     border-radius: 5px;
     background: var(--derma-roi-cta);
     color: #ffffff;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 750;
     line-height: 1.25;
     text-align: center;
@@ -454,16 +454,16 @@
     --derma-roi-price-muted: var(--derma-roi-global-muted, #9eb6c9);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     max-width: 100%;
-    min-height: 34px;
-    padding: 7px 12px;
+    min-height: 52px;
+    padding: 12px 18px;
     border: 1px solid rgba(25, 217, 192, 0.36);
     border-radius: 999px;
     background: linear-gradient(135deg, rgba(6, 27, 43, 0.96), rgba(8, 47, 70, 0.94));
     color: var(--derma-roi-price-text);
     font-family: var(--wp--preset--font-family--body, var(--global-font-family, inherit));
-    font-size: 14px;
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 800;
     line-height: 1.2;
     overflow-wrap: anywhere;
@@ -473,8 +473,8 @@
 
 .derma-roi-price::before {
     flex: 0 0 auto;
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
     border: 2px solid var(--derma-roi-price-accent);
     border-radius: 50%;
     box-shadow: inset 0 0 0 3px rgba(25, 217, 192, 0.16);
